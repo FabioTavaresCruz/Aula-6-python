@@ -50,13 +50,13 @@ def cadastrar():
     Tarefas.append(nova_tarefa)
 
 def finalizar():
-  tarefa = input("Qual item deseja alterar?: ")
-  tarefa1 = Tarefas.index (tarefa)
-  Tarefas[tarefa1] = "SIM"
-  print ("Item alterado!")
-
+  c = input("Qual tarefa deseja finalizar?: ")
+  for tarefa in Tarefas:
+    if tarefa["Título"] == c:
+        tarefa["Concluído"] = "SIM"
+        break
+    
 def remover():
-  print ("---> Excluindo uma tarefa <---")
   delete = (input("Remova a tarefa: "))
 
   for lista in Tarefas:
